@@ -1,42 +1,194 @@
-# 📰 The Daily Scoop
+# THE DAILY SCOOP
+### A Newspaper-Themed News Web Application
 
-A tabloid-styled news reader built as a single self-contained HTML file. Pick a category (or search a topic) and it pulls live headlines from [GNews.io](https://gnews.io), styled up like a scrappy newsroom front page — scrolling breaking-news ticker, rubber-stamp tags, and torn-clipping story cards.
+## Project Overview
 
-![status](https://img.shields.io/badge/status-personal%20project-lightgrey)
+**The Daily Scoop** is a responsive news web application developed using **HTML, CSS, and JavaScript**. The application provides users with the latest news headlines from different categories in a visually appealing newspaper-inspired interface. It fetches live news using the **GNews API** through a **Cloudflare Worker Proxy**, ensuring secure API communication.
+
+The project demonstrates front-end web development concepts, API integration, responsive web design, and dynamic content rendering.
+
+---
+
+## Objectives
+
+- To develop a responsive news website.
+- To fetch and display real-time news articles.
+- To provide category-based news browsing.
+- To implement keyword-based news searching.
+- To design a unique newspaper-style user interface.
+- To learn API integration using JavaScript.
+
+---
 
 ## Features
 
-- Live headlines via the GNews API
-- Category browsing: Top Stories, World, Business, Tech, Entertainment, Sports, Science, Health
-- Free-text search across headlines
-- Scrolling "breaking news" ticker built from the current results
-- No build step, no dependencies — just one HTML file
+- Live news updates
+- Newspaper-themed interface
+- Search news by keyword
+- Category-wise news filtering
+- Breaking news ticker
+- Responsive design
+- News article images
+- Article source and publication time
+- Direct link to full news articles
+- Error handling and loading indicators
 
-## Getting started
+---
 
-1. Clone this repo
-2. Open `daily-scoop.html` directly in your browser
+## Technologies Used
 
-That's it — no server, no npm install, nothing to build.
+| Technology | Purpose |
+|------------|---------|
+| HTML5 | Structure of the website |
+| CSS3 | Styling and responsive layout |
+| JavaScript (ES6) | Functionality and API integration |
+| GNews API | Fetching live news |
+| Cloudflare Worker | Secure API proxy |
+| Google Fonts | Typography |
 
-## API key
+---
 
-This project talks to GNews directly from the browser using an API key embedded in `daily-scoop.html` (look for the `API_KEY` constant near the top of the `<script>` block).
+## Software Requirements
 
-⚠️ **Heads up:** because the key lives in plain sight in the file, anyone with access to this code — or this repo, if it's public — can see and use it. That's fine for a personal, local-only project like this one. If you ever want to:
+- Any modern web browser
+  - Google Chrome
+  - Microsoft Edge
+  - Mozilla Firefox
+- Internet connection
+- Code Editor (VS Code recommended)
 
-- **make this repo public** → swap in a fresh key first (get one free at [gnews.io](https://gnews.io)), since it'll be visible in your commit history
-- **publish the website itself** → don't embed the key in the frontend at all; put it behind a small serverless proxy (e.g. a Cloudflare Worker) that holds the key server-side instead
+---
 
-## Project structure
+## Hardware Requirements
+
+- Processor: Intel Core i3 or above
+- RAM: 4 GB or higher
+- Storage: 100 MB free space
+- Internet connection
+
+---
+
+## Modules
+
+### 1. Home Page
+Displays the newspaper header, current date, and breaking news ticker.
+
+### 2. Search Module
+Allows users to search for news articles using keywords.
+
+### 3. Category Module
+Displays news according to selected categories such as:
+- Top Stories
+- World
+- Business
+- Technology
+- Entertainment
+- Sports
+- Science
+- Health
+
+### 4. News Display Module
+Shows news articles with:
+- Image
+- Title
+- Description
+- Source
+- Published time
+- Read More link
+
+### 5. Error Handling Module
+Displays user-friendly messages when news cannot be loaded or when an API error occurs.
+
+---
+
+## Working
+
+1. The user opens the application.
+2. The application loads the latest news automatically.
+3. The user can select a news category or enter a search keyword.
+4. A request is sent to the Cloudflare Worker.
+5. The Worker fetches data from the GNews API.
+6. The news articles are displayed as newspaper-style cards.
+7. Clicking **Read Full Story** opens the original news article.
+
+---
+
+## Project Structure
 
 ```
-.
-├── daily-scoop.html   # everything — markup, styles, and script in one file
-└── README.md
+Daily-Scoop/
+│
+├── daily-scoop.html
+├── README.md
 ```
 
-## Notes
+---
 
-- Free-tier GNews accounts have a daily request limit — if headlines stop loading, you may have hit it for the day.
-- Built for personal use / experimentation, not production deployment.
+## Advantages
+
+- User-friendly interface
+- Attractive newspaper design
+- Responsive on different screen sizes
+- Real-time news updates
+- Fast loading
+- Secure API communication
+- Easy to use
+
+---
+
+## Limitations
+
+- Requires an internet connection.
+- Depends on the availability of the GNews API.
+- API request limits may apply.
+- Does not store news articles offline.
+
+---
+
+## Future Scope
+
+- User authentication
+- Dark mode
+- Bookmark favorite articles
+- Multiple language support
+- Country-based news filtering
+- Voice search
+- Offline reading
+- News sharing on social media
+
+---
+
+## Learning Outcomes
+
+Through this project, the following concepts were learned:
+
+- HTML page structure
+- CSS styling and responsive design
+- JavaScript DOM manipulation
+- Fetch API
+- REST API integration
+- Cloudflare Worker deployment
+- Error handling
+- Dynamic content rendering
+- Front-end project development
+
+---
+
+## Conclusion
+
+**The Daily Scoop** successfully demonstrates how modern web technologies can be combined to build a responsive and interactive news application. The project provides users with real-time news updates in a creative newspaper-themed interface while showcasing practical implementation of API integration, responsive design, and JavaScript programming.
+
+---
+
+## Developed By
+
+**Greeshma Chavan**
+
+**Course:** Bachelor of Technology (B.Tech)  
+**Branch:** Computer Science Engineering (Artificial Intelligence & Machine Learning)
+
+---
+
+## License
+
+This project is developed for **academic and educational purposes only**.
