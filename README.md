@@ -36,7 +36,7 @@ This project talks to GNews directly from the browser using an API key embedded 
 └── README.md
 ```
 
+## Notes
 
 - Free-tier GNews accounts have a daily request limit — if headlines stop loading, you may have hit it for the day.
 - Built for personal use / experimentation, not production deployment.
-- 
