@@ -1,42 +1,43 @@
 # 📰 The Daily Scoop
 
-A tabloid-styled news reader built as a single self-contained HTML file. Pick a category (or search a topic) and it pulls live headlines from [GNews.io](https://gnews.io), styled up like a scrappy newsroom front page — scrolling breaking-news ticker, rubber-stamp tags, and torn-clipping story cards.
+A tabloid-styled news reader built with plain HTML, CSS, and JavaScript. Pick a category (or search a topic) and it pulls live headlines from [GNews.io](https://gnews.io) into a newspaper-clipping layout, complete with a scrolling breaking-news ticker and rubber-stamp category tags.
 
-![status](https://img.shields.io/badge/status-personal%20project-lightgrey)
+![style: tabloid newspaper](https://img.shields.io/badge/style-tabloid%20newspaper-c62b1f)
+![stack: HTML/CSS/JS](https://img.shields.io/badge/stack-HTML%2FCSS%2FJS-2c4a6b)
 
 ## Features
 
-- Live headlines via the GNews API
-- Category browsing: Top Stories, World, Business, Tech, Entertainment, Sports, Science, Health
-- Free-text search across headlines
-- Scrolling "breaking news" ticker built from the current results
-- No build step, no dependencies — just one HTML file
+- Live headlines from GNews, sorted into categories: Top Stories, World, Business, Tech, Entertainment, Sports, Science, Health
+- Free-text search across all news
+- Scrolling ticker tape of the latest headlines
+- No build step, no dependencies — a single `.html` file
 
 ## Getting started
 
-1. Clone this repo
-2. Open `daily-scoop.html` directly in your browser
-
-That's it — no server, no npm install, nothing to build.
-
-## API key
-
-This project talks to GNews directly from the browser using an API key embedded in `daily-scoop.html` (look for the `API_KEY` constant near the top of the `<script>` block).
-
-⚠️ **Heads up:** because the key lives in plain sight in the file, anyone with access to this code — or this repo, if it's public — can see and use it. That's fine for a personal, local-only project like this one. If you ever want to:
-
-- **make this repo public** → swap in a fresh key first (get one free at [gnews.io](https://gnews.io)), since it'll be visible in your commit history
-- **publish the website itself** → don't embed the key in the frontend at all; put it behind a small serverless proxy (e.g. a Cloudflare Worker) that holds the key server-side instead
+1. **Get a free API key** at [gnews.io](https://gnews.io) (free tier is enough for personal use).
+2. **Open `daily-scoop.html`** in a text editor and find this line near the top of the `<script>` section:
+   ```js
+   const API_KEY = 'YOUR_GNEWS_API_KEY_HERE';
+   ```
+   Replace it with your own key.
+3. **Open the file in a browser** — double-click it, or right-click → Open With → your browser. That's it, no server required.
 
 ## Project structure
 
 ```
-.
-├── daily-scoop.html   # everything — markup, styles, and script in one file
-└── README.md
+daily-scoop.html   — the entire app (markup, styles, and logic in one file)
 ```
 
-## Notes
+## ⚠️ A note on the API key
 
-- Free-tier GNews accounts have a daily request limit — if headlines stop loading, you may have hit it for the day.
-- Built for personal use / experimentation, not production deployment.
+This project calls the GNews API directly from the browser, which means the key lives in plain sight inside the page's source code (anyone with the file can view it). That's fine for a personal project you run locally, but:
+
+- **Don't publish this repo publicly with your real key still in the code** — swap it out for a placeholder (like the one above) before committing, or add the real key back locally after cloning.
+- If you ever want to host this as a public website, keep the key server-side instead (e.g. a small serverless function that proxies the request) rather than embedding it in the frontend.
+
+## Customizing
+
+- **Categories** — edit the `CATEGORIES` array in the script to add, remove, or relabel categories.
+- **Look and feel** — all colors, fonts, and spacing are CSS variables at the top of the `<style>` block (`--paper`, `--ink`, `--tabloid-red`, `--mustard`, `--faded-blue`).
+- **Result count** — change the `max=12` parameter in the `buildUrl()` function to show more or fewer stories per load.
+
